@@ -4,14 +4,18 @@ namespace TextRPG.Engine.ViewModels;
 
 public class GameSession
 {
-    private Player CurrentPlayer { get; set; }
+    public Player CurrentPlayer { get; set; }
 
     public GameSession()
     {
         CurrentPlayer = new Player
         {
             Name = "Rayu",
-            Gold = 100000
+            CharacterClass = "Fighter",
+            HitPoints = 10,
+            Gold = 100000,
+            ExperiencePoints = 0,
+            Level = 1
         };
     }
 }
