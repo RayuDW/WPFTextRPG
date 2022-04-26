@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TextRPG"
         mc:Ignorable="d"
+        FontSize="11pt"
         Title="Fancy RPG" Height="768" Width="1024">
     <Grid>
         <Grid.RowDefinitions>
@@ -69,8 +70,10 @@
                     </Grid.RowDefinitions>
                     
                     <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="{Binding CurrentLocation.Name}"/>
-                    <Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="125" Width="125" Source="{Binding CurrentLocation.ImageName}"/>
-                    <TextBlock Grid.Row="2" HorizontalAlignment="Center" Text="{Binding CurrentLocation.Description}"/>
+                    <Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="125"
+                           Width="125" Source="{Binding CurrentLocation.ImageName}" />
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Center" 
+                               Text="{Binding CurrentLocation.Description}"/>
                 </Grid>
             </Border>
         </Grid>
