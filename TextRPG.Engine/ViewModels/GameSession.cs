@@ -1,4 +1,5 @@
-﻿using TextRPG.Engine.Models;
+﻿using TextRPG.Engine.Factories;
+using TextRPG.Engine.Models;
 
 namespace TextRPG.Engine.ViewModels;
 
@@ -6,6 +7,8 @@ public class GameSession
 {
     public Player CurrentPlayer { get; set; }
     public Location CurrentLocation { get; set; }
+    
+    public World CurrentWorld { get; set; }
 
     public GameSession()
     {
@@ -19,13 +22,9 @@ public class GameSession
             Level = 1
         };
 
-        CurrentLocation = new Location
-        {
-            XCoordinate = 0,
-            YCoordinate = -1,
-            Name = "Home",
-            Description = "This is your home! Go and cuddle someone!",
-            ImageName = "/TextRPG.Engine;component/Images/Home.png"
-        };
+        WorldFactory factory = new WorldFactory();
+        CurrentWorld = factory.CreateWorld();
+
+        CurrentLocation = CurrentWorld.LocationAt(0, -1);
     }
 }
